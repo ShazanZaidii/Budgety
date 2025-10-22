@@ -1,0 +1,12 @@
+//
+//  Comments.txt
+//  Budgety
+//
+//  Created by Shazan Zaidi on 22/10/25.
+//
+
+#1{
+    // before refractoring list styling was here now it is in extracted view- TransactionRow (for original copy refer to Code/Refractored/FromContentView)
+}
+
+
