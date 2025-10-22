@@ -13,6 +13,7 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
     var currentBalance: Double = getBalance
     var currentIncome: Double {
         getIncome()
@@ -58,34 +59,73 @@ struct ContentView: View {
         }
     }
     
+    @State private var showList = false
     
-    var body: some View {
-        NavigationStack{
-            
-            BalanceView()
-            VStack {
-                HStack{
-                    Text("Payment History").font(.system(size: 18, weight: .semibold))
-                    Spacer()
-                    Button(action: {
-                        //
-                    }, label: {
-                        Image(systemName: "line.3.horizontal").font(.system(size: 18, weight: .semibold)).foregroundStyle(Color.black)
-                    })
-                    
-                }.padding(.horizontal)
-                
-                List{
-                    ForEach(transactions){ transaction in
-                        TransactionRow(transaction: transaction)
-                        // Comment - #1
-                        
+    
+        var body: some View {
+            NavigationStack {
+                ZStack(alignment: .topTrailing) { // Added ZStack so the list overlays
+                    VStack {
+                        BalanceView()
+                        VStack {
+                            HStack {
+                                Text("Payment History")
+                                    .font(.system(size: 18, weight: .semibold))
+                                Spacer()
+                                Button(action: {
+                                    withAnimation {
+                                        showList.toggle()
+                                    }
+                                }, label: {
+                                    Image(systemName: "line.3.horizontal")
+                                        .font(.system(size: 18, weight: .semibold))
+                                        .foregroundStyle(Color.black)
+                                })
+                            }
+                            .padding(.horizontal)
+    
+                            List {
+                                ForEach(transactions) { transaction in
+                                    TransactionRow(transaction: transaction)
+                                    // Comment - #1
+                                }
+                            }
+                            .scrollContentBackground(.hidden)
+                        }
                     }
-                }.scrollContentBackground(.hidden)
+    
+                    if showList {
+                        VStack(alignment: .leading, spacing: 0) {
+                           
+                            NavigationLink(destination: AddTransactionView(), label:{
+                                HStack{
+                                    Text("Add Transaction").padding()
+                                    Image(systemName: "plus.circle")
+                                }
+                            })
+                            
+                            Divider()
+                            
+                                NavigationLink(destination: DeleteTransactionView(), label:{
+                                    HStack{
+                                        Text("Delete Last Transaction").padding()
+                                        Spacer()
+                                        Image(systemName: "minus.circle").padding(.trailing)
+                                    }
+                                  
+                            })
+                          
+                        }
+                        .frame(width: 200)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 10)
+                        .offset(x: -10, y: 205)
+                    }
+                }
             }
         }
-    }}
-
+    }
 struct TransactionRow: View {
     let transaction: Transaction
     

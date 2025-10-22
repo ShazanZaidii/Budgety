@@ -56,6 +56,11 @@
 			path = Refractored;
 			sourceTree = "<group>";
 		};
+		3637A2EC2EA92A9A00187550 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		3637A2D32EA8A3DD00187550 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				3637A2EC2EA92A9A00187550 /* ViewModels */,
 				3637A2D92EA8C47400187550 /* Refractored */,
 				3637A2D42EA8A41200187550 /* Models */,
 				3637A2C72EA8A3A100187550 /* Budgety */,
@@ -124,6 +130,7 @@
 			fileSystemSynchronizedGroups = (
 				3637A2C72EA8A3A100187550 /* Budgety */,
 				3637A2D92EA8C47400187550 /* Refractored */,
+				3637A2EC2EA92A9A00187550 /* ViewModels */,
 			);
 			name = Budgety;
 			packageProductDependencies = (
