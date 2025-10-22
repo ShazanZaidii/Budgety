@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var transactions : [Transaction] = [
-        Transaction(amount: 9.82, type: .income, date: Date(), category: "Food", item: "Apple")
+        Transaction(amount: 9.82, type: .expense, date: Date(), category: "Food", item: "Apple")
     ]
     var body: some View {
         VStack {
@@ -22,11 +22,11 @@ struct ContentView: View {
                                         Image(systemName: "fork.knife.circle")
                                         Text(transaction.item)
                                         Spacer()
-                        Text(transaction.type == .income ? "+$\(transaction.amount.description)" :"- $\(transaction.amount.description)").font(.system(size: 18, weight: .bold)).foregroundStyle(transaction.type == .expense ? Color.black : Color.green)
+                        Text(transaction.type == .income ? "+\(transaction.displayAmount)" :"- \(transaction.displayAmount)").font(.system(size: 18, weight: .bold)).foregroundStyle(transaction.type == .expense ? Color.black : Color.green)
 //                                        Image(systemName: transaction.type == .expense ? "arrow.up.right" : "arrow.down.left").font(.system(size: 18, weight: .bold)).foregroundStyle(transaction.type == .expense ? Color.red : Color.green)
                                     }
                     HStack{
-                        Text("Paid On \(transaction.date.shortStyle)").font(.system(size: 14, weight: .light))
+                        Text(transaction.type == .income ? "Recieved on \(transaction.date.shortStyle)" :"Paid On \(transaction.date.shortStyle)").font(.system(size: 14, weight: .light))
 
 
                         Spacer()
