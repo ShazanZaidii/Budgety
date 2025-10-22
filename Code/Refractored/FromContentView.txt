@@ -7,6 +7,7 @@
 
 import Foundation
 
+#1:-
 List now at line 46-
 
 List{
@@ -33,3 +34,20 @@ ForEach(transactions){ transaction in
     }
 }.scrollContentBackground(.hidden)
 
+#2-
+    //    @State var transactions : [Transaction] = [
+    //        Transaction(amount: 62, type: .expense, date: Date(), category: "Food", item: "Sharif Sweets"),
+    //        Transaction(amount: 10, type: .expense, date: Date(), category: "Food", item: "Irctc UTS"),
+    //        Transaction(amount: 20, type: .income, date: Date(), category: "Food", item: "Naseeb Khan"),
+    //        Transaction(amount: 50, type: .income, date: Date(), category: "Food", item: "Ajay Aggarwal"),
+    //        Transaction(amount: 284, type: .expense, date: Date(), category: "Food", item: "Swiggy Ltd"),
+    //        Transaction(amount: 16, type: .expense, date: Date(), category: "Food", item: "Anand Enterprise"),
+    //        Transaction(amount: 9.82, type: .expense, date: Date(), category: "Food", item: "Amir Kheyali"),
+    //        Transaction(amount: 252, type: .expense, date: Date(), category: "Food", item: "Ekart"),
+    //        Transaction(amount: 10000, type: .income, date: Date(), category: "Food", item: "Papa"),
+    //        Transaction(amount: 150, type: .expense, date: Date(), category: "Food", item: "Rishidev"),
+    //        Transaction(amount: 269, type: .expense, date: Date(), category: "Food", item: "Swiggy"),
+    //        Transaction(amount: 742, type: .income, date: Date(), category: "Food", item: "Ranjit Kamat"),
+    //        Transaction(amount: 233, type: .expense, date: Date(), category: "Food", item: "Zepto Marketplace")
+    //    ]
+}

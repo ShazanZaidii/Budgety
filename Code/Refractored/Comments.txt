@@ -9,4 +9,7 @@
     // before refractoring list styling was here now it is in extracted view- TransactionRow (for original copy refer to Code/Refractored/FromContentView)
 }
 
-
+#2{
+    // at line 16
+    
+}
