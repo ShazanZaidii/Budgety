@@ -13,4 +13,13 @@ struct Transaction: Identifiable {
     var type: TransactionType
     var date: Date
     var category: String
+    var item: String
+}
+
+extension Date {
+    var shortStyle: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM, h:mm a"
+        return formatter.string(from: self)
+    }
 }
